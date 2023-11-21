@@ -33,7 +33,7 @@ export class FfmpegService {
         '-ss', `00:00:0${num}`,
         '-frames:v', '1',
         '-filter:v', 'scale=510:-1',
-        `output_0${num}.png`
+        `${fileName}_0${num}.png`
       )
     });
     await this.ffmpeg.run(
@@ -41,7 +41,7 @@ export class FfmpegService {
     )
     const ssURLs : string[] = []
     this.ssCount.forEach(num => {
-      const ssBlob = new Blob([this.ffmpeg.FS('readFile',`output_0${num}.png`).buffer],{type:'image/png'})
+      const ssBlob = new Blob([this.ffmpeg.FS('readFile',`${fileName}_0${num}.png`).buffer],{type:'image/png'})
       const ssURL = URL.createObjectURL(ssBlob)
       ssURLs.push(ssURL)
     });
