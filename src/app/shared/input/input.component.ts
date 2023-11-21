@@ -10,6 +10,6 @@ import { FormControl } from '@angular/forms';
 export class InputComponent {
 @Input() type='text'
 @Input() placeHolder=''
-@Input() format=''
+@Input() format? : string
 @Input() control=new FormControl()
 }
