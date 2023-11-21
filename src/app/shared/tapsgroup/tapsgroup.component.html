@@ -1,0 +1,11 @@
+<!-- Tabs -->
+<ul class="flex flex-wrap mb-4">
+    <li class="flex-auto text-center" *ngFor="let tap of taps">
+      <a [ngClass]="{
+        'text-white bg-indigo-400':tap.active,
+        'hover:text-white hover:bg-indigo-400':!tap.active,
+      }" class="block rounded py-3 px-4" href="#" (click)="selectTap(tap)">{{tap.tapTitle}}</a>
+    </li>
+  </ul>
+
+  <ng-content></ng-content>

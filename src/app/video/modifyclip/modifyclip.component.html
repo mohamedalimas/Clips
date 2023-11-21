@@ -1,0 +1,31 @@
+<div class="mt-6 rounded-tl-2xl rounded-br-2xl shadow-xl bg-secondary flex flex-col justify-start">
+  
+    <!-- Image -->
+    <a href="#">
+      <img class="card-img-top rounded-tl-2xl w-full" [src]="clip?.imgUrl" crossorigin="">
+    </a>
+
+    <!-- Body -->
+    <div class="p-6 text-2xl">
+
+      <!-- Link -->
+      <a [routerLink]="['../clip/',clip?.clipid]" class="font-bold mb-2">
+        {{ clip?.clipTitle }}
+      </a>
+      <a href="#" class="bg-gray-400 text-white px-2 py-1 ml-2 text-sm rounded" (click)="copyToClipboard($event , clip?.clipid)">
+        Copy Link
+      </a>
+
+    </div>
+
+    <!-- Actions -->
+    <div class="flex text-center text-2xl bg-gray-800 p-2 mt-auto">
+      <a href="#" (click)="editClip($event)" class="flex-1 p-2 border-right border-r-2 border-gray-700 transition hover:text-indigo-400">
+        <span class="material-icons text-base">build</span>
+      </a>
+      <a href="#" (click)="deletClip($event)" class="flex-1 p-2 rounded-br-2xl transition hover:text-indigo-400">
+        <span class="material-icons text-base">delete</span>
+      </a>
+    </div>
+
+  </div>
