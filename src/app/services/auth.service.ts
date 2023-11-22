@@ -30,9 +30,9 @@ export class AuthService {
 
     this.router.events.pipe(
       filter((event)=> event instanceof NavigationEnd),
-      map(()=>this.route.firstChild),
-      switchMap((route)=>route?.data ?? of({authedonly : false}) )
-    ).subscribe((data)=> { this.redirect = data.authedonly })
+      map(()=> this.route.firstChild),
+      switchMap((route)=>route?.data ?? of({authedonly : false}))
+    ).subscribe((data)=> {  this.redirect = data.authedonly })
   }
 
   async registeruser(userData: IUser) {

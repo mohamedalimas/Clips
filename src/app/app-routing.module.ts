@@ -9,26 +9,38 @@ import { CurdclipService } from './services/curdclip.service';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
+    data:{
+      authedonly : false
+    }
   },
   {
     path : 'clip/:id',
     component : ClipComponent,
+    data:{
+      authedonly : false
+    },
     resolve : {
       clip : CurdclipService
     }
   },
   {
     path: 'about',
-    component: AboutComponent
+    component: AboutComponent,
+    data:{
+      authedonly : false
+    }
   },
-  {
-    path : '',
-    loadChildren : async ()=> (await import('./video/video.module')).VideoModule
-  },
+  // {
+  //   path : '',
+  //   loadChildren : async ()=> (await import('./video/video.module')).VideoModule
+  // },
   {
     path: '**',
-    component: NotfoundComponent
+    component: NotfoundComponent,
+    data:{
+      authedonly : false
+    }
   }
 ];
 

@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { ClipComponent } from './clip/clip.component';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { ClipslistComponent } from './clipslist/clipslist.component';
+import { VideoModule } from './video/video.module';
 
 
 @NgModule({
@@ -30,8 +31,9 @@ import { ClipslistComponent } from './clipslist/clipslist.component';
     SharedModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
+    VideoModule,
     AppRoutingModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
